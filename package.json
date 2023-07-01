@@ -35,6 +35,7 @@
       }
     },
     "bundler": {
+      "webpackConfigPath": "webpack.config.js",
       "requiredExternals": [
         "react-intl"
       ]
@@ -45,8 +46,7 @@
     "@americanexpress/one-app-router": "^1.1.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.5",
+    "@mui/material": "^5.13.6",
     "holocron": "^1.1.2",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
@@ -66,13 +66,13 @@
     "enzyme-to-json": "^3.6.1",
     "eslint": "^7.15.0",
     "eslint-config-amex": "^15.3.2",
+    "fs-extra": "^11.1.1",
     "glob": "^7.1.6",
     "jest": "^26.6.3",
     "jest-json-schema": "^2.1.0",
-    "parrot-middleware": "^4.1.1",
-    "rimraf": "^3.0.2",
     "node-fetch": "^2.6.11",
-    "fs-extra": "^11.1.1"
+    "parrot-middleware": "^4.1.1",
+    "rimraf": "^3.0.2"
   },
   "jest": {
     "preset": "amex-jest-preset-react",
