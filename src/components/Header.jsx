@@ -6,9 +6,11 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { useCookie } from '../hooks/useCookie';
 
 export const Header = () => {
   const { locale } = useIntl();
+  const { accessToken, clearCookie } = useCookie();
 
   const loginUrl = `/${locale}/auth/signin`;
   const homeUrl = `/${locale}/home`;
@@ -43,11 +45,22 @@ export const Header = () => {
               href={aboutUrl}
             >About
             </Button>
-            <Button
-              color="inherit"
-              href={loginUrl}
-            >Login
-            </Button>
+            {
+              accessToken ? (
+                <Button
+                  color="inherit"
+                  onClick={clearCookie}
+                  href={loginUrl}
+                >LogOut
+                </Button>
+              ) : (
+                <Button
+                  color="inherit"
+                  href={loginUrl}
+                >Login
+                </Button>
+              )
+            }
           </Box>
         </Toolbar>
       </AppBar>
